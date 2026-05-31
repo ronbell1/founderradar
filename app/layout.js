@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "FounderRadar — B2B Lead Intelligence Engine",
-  description: "Turn any company name into a ready-to-send sales dossier in under 60 seconds. AI-powered research, pain extraction, and personalized outreach generation.",
-  keywords: "B2B sales, lead intelligence, sales research, outbound automation, company research",
+  title: "FounderRadar — Company Intelligence Platform",
+  description: "Research any company instantly. Get key contacts, outreach templates, interview prep, market intel, and actionable insights — all from a single search.",
+  keywords: "company research, lead intelligence, job hunting, networking, sales prospecting, company analysis",
 };
 
 export default function RootLayout({ children }) {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
             📡 <span>FounderRadar</span>
           </a>
           <div className="flex items-center gap-sm">
-            <span className="badge badge-accent">Hackathon MVP</span>
+            <span className="badge badge-accent">Powered by Anakin Wire</span>
           </div>
         </nav>
         <main style={{ paddingTop: '60px' }}>

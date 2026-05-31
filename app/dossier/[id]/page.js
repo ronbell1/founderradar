@@ -369,11 +369,58 @@ function KeyPeople({ data }) {
               <div className="person-name">{person.name}</div>
               <div className="person-title-v2">{person.title}</div>
               {person.bio && <p className="person-bio">{person.bio.slice(0, 120)}</p>}
-              <div className="person-reason-v2">{person.reason}</div>
+              
+              {/* Contact Links */}
+              <div className="person-contacts" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
+                {person.contact?.linkedin && (
+                  <a href={person.contact.linkedin} target="_blank" rel="noopener noreferrer" 
+                     className="badge" style={{ background: '#0a66c233', color: '#0a66c2', border: '1px solid #0a66c244', cursor: 'pointer', textDecoration: 'none', fontSize: '0.75rem' }}>
+                    🔗 LinkedIn
+                  </a>
+                )}
+                {person.contact?.twitter && (
+                  <a href={`https://twitter.com/${person.contact.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer"
+                     className="badge" style={{ background: '#1da1f233', color: '#1da1f2', border: '1px solid #1da1f244', cursor: 'pointer', textDecoration: 'none', fontSize: '0.75rem' }}>
+                    𝕏 {person.contact.twitter}
+                  </a>
+                )}
+                {person.contact?.email && (
+                  <a href={`mailto:${person.contact.email}`}
+                     className="badge" style={{ background: '#10b98133', color: '#10b981', border: '1px solid #10b98144', cursor: 'pointer', textDecoration: 'none', fontSize: '0.75rem' }}>
+                    ✉ {person.contact.email}
+                  </a>
+                )}
+                {person.contact?.website && (
+                  <a href={person.contact.website.startsWith('http') ? person.contact.website : `https://${person.contact.website}`} target="_blank" rel="noopener noreferrer"
+                     className="badge" style={{ background: '#a855f733', color: '#a855f7', border: '1px solid #a855f744', cursor: 'pointer', textDecoration: 'none', fontSize: '0.75rem' }}>
+                    🌐 Website
+                  </a>
+                )}
+                {(!person.contact?.linkedin && !person.contact?.twitter && !person.contact?.email && data.hasRealData) && (
+                  <a href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(person.name)}`} target="_blank" rel="noopener noreferrer"
+                     className="badge" style={{ background: '#52525b33', color: '#a1a1aa', border: '1px solid #52525b', cursor: 'pointer', textDecoration: 'none', fontSize: '0.75rem' }}>
+                    🔍 Look up on LinkedIn
+                  </a>
+                )}
+              </div>
+
+              <div className="person-reason-v2" style={{ marginTop: '12px' }}>{person.reason}</div>
             </div>
           </div>
         ))}
       </div>
+      
+      {/* Email Format Note */}
+      {data.leaders?.some(p => p.contact?.emailFormat) && (
+        <div className="callout-card callout-card--info" style={{ marginTop: 'var(--space-md)' }}>
+          <div className="callout-icon">📧</div>
+          <div>
+            <div className="callout-title">Email Format Detected</div>
+            <div className="callout-text">Company email pattern: <strong>{data.leaders.find(p => p.contact?.emailFormat)?.contact.emailFormat}</strong></div>
+          </div>
+        </div>
+      )}
+      
       {data.strategy && (
         <div className="callout-card callout-card--info">
           <div className="callout-icon">💡</div>

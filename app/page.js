@@ -9,7 +9,7 @@ const PURPOSES = [
     icon: '🎯',
     label: 'Job Hunt',
     tagline: 'I want to work here',
-    description: 'Research companies, find hiring managers, prep for interviews, craft outreach',
+    description: 'Find hiring managers, prep for interviews, understand company culture, and craft personalized outreach messages.',
     color: '#6c5ce7',
   },
   {
@@ -17,7 +17,7 @@ const PURPOSES = [
     icon: '🚀',
     label: 'Founder Mode',
     tagline: 'Competitive intel & partnerships',
-    description: 'Analyze competitors, find investors, explore partnerships, map market position',
+    description: 'Analyze funding history, map competitors, identify partnership angles, and research key decision makers.',
     color: '#00cec9',
   },
   {
@@ -25,7 +25,7 @@ const PURPOSES = [
     icon: '🤝',
     label: 'Networking',
     tagline: 'Connect with the right people',
-    description: 'Find key contacts, generate connection requests, build conversation starters',
+    description: 'Find key contacts with LinkedIn profiles, generate conversation starters, and build a connection strategy.',
     color: '#fdcb6e',
   },
   {
@@ -33,7 +33,7 @@ const PURPOSES = [
     icon: '📊',
     label: 'Lead Gen',
     tagline: 'Sell to this company',
-    description: 'Identify pain points, map decision makers, generate personalized outreach',
+    description: 'Map decision makers, identify pain points and buy signals, and generate personalized sales outreach.',
     color: '#ff6b6b',
   },
 ];
@@ -82,7 +82,7 @@ export default function HomePage() {
 
       <p className="hero-subtitle slide-up" style={{ animationDelay: '0.1s' }}>
         Enter a company name or domain, pick your purpose, and get a complete intelligence
-        package — key people, outreach templates, and actionable insights in under 60 seconds.
+        package — key people with contact info, outreach templates, and actionable insights in under 90 seconds.
       </p>
 
       {/* Purpose Selector */}
@@ -141,49 +141,6 @@ export default function HomePage() {
         </p>
       )}
 
-      {/* What You Get */}
-      <div className="container" style={{ marginTop: 'var(--space-3xl)' }}>
-        <h2 className="text-center slide-up" style={{ animationDelay: '0.3s', marginBottom: 'var(--space-xl)' }}>
-          What you get
-        </h2>
-        <div className="features slide-up" style={{ animationDelay: '0.35s' }}>
-          <div className="card feature-card">
-            <div className="feature-icon">👥</div>
-            <h3>Key People Map</h3>
-            <p>Find the right contacts — hiring managers, founders, VPs — with context on who to reach first and why.</p>
-          </div>
-
-          <div className="card feature-card">
-            <div className="feature-icon">✉️</div>
-            <h3>Ready-to-Send Outreach</h3>
-            <p>Personalized emails, LinkedIn messages, and connection requests tailored to your purpose.</p>
-          </div>
-
-          <div className="card feature-card">
-            <div className="feature-icon">📰</div>
-            <h3>Latest Intel</h3>
-            <p>Recent news, funding rounds, product launches, and hiring activity — all auto-aggregated.</p>
-          </div>
-
-          <div className="card feature-card">
-            <div className="feature-icon">💡</div>
-            <h3>Smart Insights</h3>
-            <p>Culture signals, tech stack, growth trajectory, and pain points extracted from 10+ sources.</p>
-          </div>
-
-          <div className="card feature-card">
-            <div className="feature-icon">📈</div>
-            <h3>Opportunity Score</h3>
-            <p>0-100 score based on timing signals — is this the right moment to reach out?</p>
-          </div>
-
-          <div className="card feature-card">
-            <div className="feature-icon">⚡</div>
-            <h3>Real-Time Progress</h3>
-            <p>Watch each source complete live. From company name to full report in under 60 seconds.</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
